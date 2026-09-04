@@ -10,7 +10,10 @@ address, offline, in about a second.
 
 **[Try it in the browser](https://frankie-muller.github.io/bitcoin-wallet-core/)**
 — same generation, no install, runs entirely client-side (check your Network
-tab; nothing fires after the page loads).
+tab; nothing fires on generation). It also has a "Verify" button that checks
+the address against [mempool.space](https://mempool.space)'s public API —
+the one deliberate, opt-in exception to "no network calls," with the
+evidence shown inline and a link to the full explorer page.
 
 ## Why this is public
 
@@ -76,7 +79,8 @@ const { address } = await deriveBtcAddress(existingMnemonic);
 `demo-web/main.ts` bundled by esbuild into a single dependency-free
 `docs/bundle.js` (`npm run build:web`). It's the same `createWallet()` as
 everywhere else in this repo, just running in a browser tab instead of
-Node.
+Node, plus a "Verify" button that cross-checks the generated address
+against mempool.space's API.
 
 ## Correctness
 

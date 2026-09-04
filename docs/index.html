@@ -90,6 +90,30 @@
     font-size: 13px;
     margin-top: 14px;
   }
+  .verify-block { margin-top: 18px; }
+  button.secondary {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 9px 16px;
+    font-size: 13px;
+  }
+  .verify-note {
+    color: var(--muted);
+    font-size: 12px;
+    margin-left: 8px;
+  }
+  #verify-result { margin-top: 12px; }
+  #verify-result a {
+    color: var(--accent);
+    font-size: 13px;
+    text-decoration: none;
+  }
+  #verify-result a:hover { text-decoration: underline; }
+  .evidence {
+    color: #3fb950;
+    font-size: 13px;
+  }
   footer {
     max-width: 640px;
     margin: 28px auto 0;
@@ -105,9 +129,10 @@
   <p class="tagline">Live demo — generates a real BIP39/BIP84 mainnet Bitcoin wallet, entirely in this tab.</p>
 
   <div class="panel">
-    <p>No server, no API calls, no analytics. Everything below runs in your browser with the same
-      <code>createWallet()</code> function this repo ships and tests. Open your Network tab — nothing
-      fires when you click the button.</p>
+    <p>No server, no analytics. Generation runs entirely in your browser with the same
+      <code>createWallet()</code> function this repo ships and tests — open your Network tab, nothing
+      fires when you click the button. The one exception is the optional "Verify" button below the
+      result, which asks a public block explorer's API whether the address is real.</p>
     <button id="generate">Generate real wallet</button>
     <div id="output" hidden></div>
   </div>
