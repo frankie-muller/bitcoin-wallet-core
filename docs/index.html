@@ -163,15 +163,21 @@
     <div class="name">
       <p class="kicker">Live demo</p>
       <h1>Bitcoin Wallet Core</h1>
-      <p class="tagline">Generates a real BIP39/BIP84 mainnet Bitcoin wallet, entirely in this tab.</p>
+      <p class="tagline">A real BIP39/BIP84 mainnet Bitcoin wallet, made right here. Your browser does the math, your machine holds the keys, no server is in the room.</p>
     </div>
   </header>
 
   <div class="panel">
-    <p>No server, no analytics. Generation runs entirely in your browser with the same
-      <code>createWallet()</code> function this repo ships and tests — open your Network tab, nothing
-      fires when you click the button. The one exception is the optional "Verify" button below the
-      result, which asks a public block explorer's API whether the address is real.</p>
+    <p>One button. Behind it, the whole stack: your OS hands over 128 random bits, they become
+      twelve words, PBKDF2 grinds the words into a seed, BIP32 grows a key tree from it, one branch
+      is picked at <code>m/84'/0'/0'/0/0</code>, and secp256k1 turns that into a bech32 address you
+      could fund tonight. Every step of that runs in this tab, on your CPU, with the same
+      <code>createWallet()</code> this repo ships and tests.</p>
+    <p>Simple on the outside because the complexity is all under the hood — and trustless because
+      none of it leaves the hood. Nothing is fetched, nothing is sent, nothing is stored: open your
+      Network tab, click, and watch nothing fire. You don't have to believe us; you can check. The
+      one exception is the optional "Verify" button below the result, which asks a public block
+      explorer whether the address is real.</p>
     <button id="generate">Generate real wallet</button>
     <div id="output" hidden></div>
   </div>
