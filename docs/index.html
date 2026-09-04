@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>BWC — Bitcoin Wallet Core · live demo</title>
+<title>Bitcoin Wallet Core · live demo</title>
 <style>
   :root {
     color-scheme: dark light;
@@ -53,19 +53,10 @@
     box-shadow: 0 0 0 4px rgba(247, 147, 26, 0.08);
   }
   .mark .glyph {
-    font-size: 26px;
+    font-size: 50px;
     line-height: 1;
     color: var(--accent);
     font-weight: 700;
-  }
-  .mark .abbr {
-    font-family: var(--mono);
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 0.22em;
-    margin-top: 5px;
-    padding-left: 0.22em; /* balance the trailing letter-spacing */
-    color: var(--text);
   }
   .name { min-width: 0; }
   .name .kicker {
@@ -87,8 +78,7 @@
   @media (max-width: 480px) {
     .masthead { align-items: flex-start; gap: 14px; }
     .mark { width: 64px; height: 64px; border-radius: 12px; }
-    .mark .glyph { font-size: 22px; }
-    .mark .abbr { font-size: 13px; }
+    .mark .glyph { font-size: 42px; }
     h1 { font-size: 24px; }
   }
   .panel {
@@ -177,10 +167,9 @@
   <header class="masthead">
     <div class="mark" aria-hidden="true">
       <span class="glyph">₿</span>
-      <span class="abbr">BWC</span>
     </div>
     <div class="name">
-      <p class="kicker">BWC · live demo</p>
+      <p class="kicker">Live demo</p>
       <h1>Bitcoin Wallet Core</h1>
       <p class="tagline">Generates a real BIP39/BIP84 mainnet Bitcoin wallet, entirely in this tab.</p>
     </div>
