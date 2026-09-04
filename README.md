@@ -103,4 +103,8 @@ from the spec itself — not just "looks like a Bitcoin address."
 
 ## License
 
-MIT
+MIT for the code in this repo. `docs/bundle.js` also compiles in 62
+open-source packages (bitcoinjs-lib, the `@scure`/`@noble`/`@bitcoinerlab`
+stack, and their transitive dependencies) — see
+[THIRD-PARTY-LICENSES.md](THIRD-PARTY-LICENSES.md) for the full list and
+license texts.
