@@ -8,6 +8,10 @@ No mocks, no placeholders: `npm run demo` generates a real 12-word BIP39
 mnemonic and derives its real, valid mainnet BIP84 (native SegWit) Bitcoin
 address, offline, in about a second.
 
+**[Try it in the browser](https://frankie-muller.github.io/bitcoin-wallet-core/)**
+— same generation, no install, runs entirely client-side (check your Network
+tab; nothing fires after the page loads).
+
 ## Why this is public
 
 Wallet software is supposed to be auditable. The security of a Bitcoin
@@ -65,6 +69,14 @@ const { address } = await deriveBtcAddress(existingMnemonic);
 - **Path**: `m/84'/0'/0'/0/0` — BIP84, account 0, external chain, index 0.
 - **Address**: P2WPKH (native SegWit, `bc1...`), mainnet by default; pass any
   `bitcoinjs-lib` `Network` to derive on testnet/regtest instead.
+
+## Web demo
+
+`docs/` is the static site behind the GitHub Pages link above —
+`demo-web/main.ts` bundled by esbuild into a single dependency-free
+`docs/bundle.js` (`npm run build:web`). It's the same `createWallet()` as
+everywhere else in this repo, just running in a browser tab instead of
+Node.
 
 ## Correctness
 

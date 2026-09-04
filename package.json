@@ -7,7 +7,8 @@
   "main": "src/wallet.ts",
   "scripts": {
     "demo": "tsx demo/generate.ts",
-    "test": "node --import tsx --test test/*.test.ts"
+    "test": "node --import tsx --test test/*.test.ts",
+    "build:web": "esbuild demo-web/main.ts --bundle --format=esm --outfile=docs/bundle.js --minify --alias:stream=stream-browserify --alias:events=events --define:global=globalThis --inject:./demo-web/node-shims.ts"
   },
   "dependencies": {
     "@bitcoinerlab/secp256k1": "^1.2.0",
@@ -15,10 +16,15 @@
     "@scure/bip32": "^1.5.0",
     "@scure/bip39": "^1.4.0",
     "bip32": "^4.0.0",
-    "bitcoinjs-lib": "^6.1.6"
+    "bitcoinjs-lib": "^6.1.6",
+    "buffer": "^6.0.3"
   },
   "devDependencies": {
     "@types/node": "^22.7.5",
+    "esbuild": "^0.28.2",
+    "events": "^3.3.0",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
     "tsx": "^4.19.1",
     "typescript": "^5.6.3"
   }

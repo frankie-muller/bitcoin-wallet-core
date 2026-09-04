@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>bitcoin-wallet-core — live demo</title>
+<style>
+  :root {
+    color-scheme: dark light;
+    --bg: #0b0d10;
+    --panel: #14171c;
+    --border: #262b33;
+    --text: #e8eaed;
+    --muted: #8a919e;
+    --accent: #f7931a;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f7f7f8;
+      --panel: #ffffff;
+      --border: #e2e4e8;
+      --text: #14171c;
+      --muted: #5b6472;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 15px/1.55 -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    padding: 48px 20px 80px;
+  }
+  main { max-width: 640px; margin: 0 auto; }
+  h1 {
+    font-size: 22px;
+    margin: 0 0 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  h1::before { content: '₿'; color: var(--accent); }
+  .tagline { color: var(--muted); margin: 0 0 28px; }
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+  }
+  p { margin: 0 0 14px; }
+  p:last-child { margin-bottom: 0; }
+  button {
+    appearance: none;
+    border: none;
+    background: var(--accent);
+    color: #12100c;
+    font: inherit;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  button:disabled { opacity: 0.6; cursor: default; }
+  #output { margin-top: 22px; border-top: 1px solid var(--border); padding-top: 18px; }
+  .row { margin-bottom: 10px; }
+  .row .label {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin-bottom: 3px;
+  }
+  code {
+    font-family: var(--mono);
+    font-size: 13px;
+    word-break: break-all;
+    background: rgba(127, 127, 127, 0.12);
+    padding: 3px 6px;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  .error {
+    color: #e5484d;
+    font-size: 13px;
+  }
+  .warn {
+    color: var(--accent);
+    font-size: 13px;
+    margin-top: 14px;
+  }
+  footer {
+    max-width: 640px;
+    margin: 28px auto 0;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<main>
+  <h1>bitcoin-wallet-core</h1>
+  <p class="tagline">Live demo — generates a real BIP39/BIP84 mainnet Bitcoin wallet, entirely in this tab.</p>
+
+  <div class="panel">
+    <p>No server, no API calls, no analytics. Everything below runs in your browser with the same
+      <code>createWallet()</code> function this repo ships and tests. Open your Network tab — nothing
+      fires when you click the button.</p>
+    <button id="generate">Generate real wallet</button>
+    <div id="output" hidden></div>
+  </div>
+
+  <footer>
+    Source: <a href="https://github.com/frankie-muller/bitcoin-wallet-core" target="_blank" rel="noopener">github.com/frankie-muller/bitcoin-wallet-core</a>
+    — this page is <a href="https://github.com/frankie-muller/bitcoin-wallet-core/blob/main/demo-web/main.ts" target="_blank" rel="noopener">demo-web/main.ts</a>,
+    bundled as-is into <a href="./bundle.js">bundle.js</a>.
+  </footer>
+</main>
+<script type="module" src="./bundle.js"></script>
+</body>
+</html>

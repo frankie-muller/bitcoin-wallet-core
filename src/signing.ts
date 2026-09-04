@@ -6,7 +6,7 @@
 
 import { sha256 } from '@noble/hashes/sha2.js';
 import * as secp256k1 from '@bitcoinerlab/secp256k1';
-import { Buffer } from 'node:buffer';
+import { Buffer } from 'buffer';
 
 export interface SignedPayload {
   signature: string;

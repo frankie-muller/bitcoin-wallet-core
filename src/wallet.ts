@@ -12,7 +12,7 @@ import { BIP32Factory } from 'bip32';
 import * as ecc from '@bitcoinerlab/secp256k1';
 import * as bitcoin from 'bitcoinjs-lib';
 import { HDKey } from '@scure/bip32';
-import { Buffer } from 'node:buffer';
+import { Buffer } from 'buffer';
 
 const bip32 = BIP32Factory(ecc);
 
