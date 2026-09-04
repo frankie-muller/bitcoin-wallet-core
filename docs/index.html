@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>bitcoin-wallet-core — live demo</title>
+<title>BWC — Bitcoin Wallet Core · live demo</title>
 <style>
   :root {
     color-scheme: dark light;
@@ -33,15 +33,64 @@
     padding: 48px 20px 80px;
   }
   main { max-width: 640px; margin: 0 auto; }
-  h1 {
-    font-size: 22px;
-    margin: 0 0 4px;
+  .masthead {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 18px;
+    margin: 0 0 28px;
   }
-  h1::before { content: '₿'; color: var(--accent); }
-  .tagline { color: var(--muted); margin: 0 0 28px; }
+  .mark {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 76px;
+    height: 76px;
+    border: 1.5px solid var(--accent);
+    border-radius: 14px;
+    background: linear-gradient(160deg, rgba(247, 147, 26, 0.16), rgba(247, 147, 26, 0.03));
+    box-shadow: 0 0 0 4px rgba(247, 147, 26, 0.08);
+  }
+  .mark .glyph {
+    font-size: 26px;
+    line-height: 1;
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .mark .abbr {
+    font-family: var(--mono);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    margin-top: 5px;
+    padding-left: 0.22em; /* balance the trailing letter-spacing */
+    color: var(--text);
+  }
+  .name { min-width: 0; }
+  .name .kicker {
+    font-family: var(--mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    margin: 0 0 4px;
+  }
+  h1 {
+    font-size: 28px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin: 0 0 6px;
+    text-wrap: balance;
+  }
+  .tagline { color: var(--muted); margin: 0; }
+  @media (max-width: 480px) {
+    .masthead { align-items: flex-start; gap: 14px; }
+    .mark { width: 64px; height: 64px; border-radius: 12px; }
+    .mark .glyph { font-size: 22px; }
+    .mark .abbr { font-size: 13px; }
+    h1 { font-size: 24px; }
+  }
   .panel {
     background: var(--panel);
     border: 1px solid var(--border);
@@ -125,8 +174,17 @@
 </head>
 <body>
 <main>
-  <h1>bitcoin-wallet-core</h1>
-  <p class="tagline">Live demo — generates a real BIP39/BIP84 mainnet Bitcoin wallet, entirely in this tab.</p>
+  <header class="masthead">
+    <div class="mark" aria-hidden="true">
+      <span class="glyph">₿</span>
+      <span class="abbr">BWC</span>
+    </div>
+    <div class="name">
+      <p class="kicker">BWC · live demo</p>
+      <h1>Bitcoin Wallet Core</h1>
+      <p class="tagline">Generates a real BIP39/BIP84 mainnet Bitcoin wallet, entirely in this tab.</p>
+    </div>
+  </header>
 
   <div class="panel">
     <p>No server, no analytics. Generation runs entirely in your browser with the same
