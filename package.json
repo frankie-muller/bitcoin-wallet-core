@@ -1,0 +1,25 @@
+{
+  "name": "bitcoin-wallet-core",
+  "version": "0.1.0",
+  "description": "Open-source BIP39/BIP84 Bitcoin wallet derivation — generates real, spec-verified mainnet addresses, offline, standalone from any app.",
+  "license": "MIT",
+  "type": "module",
+  "main": "src/wallet.ts",
+  "scripts": {
+    "demo": "tsx demo/generate.ts",
+    "test": "node --import tsx --test test/*.test.ts"
+  },
+  "dependencies": {
+    "@bitcoinerlab/secp256k1": "^1.2.0",
+    "@noble/hashes": "^1.5.0",
+    "@scure/bip32": "^1.5.0",
+    "@scure/bip39": "^1.4.0",
+    "bip32": "^4.0.0",
+    "bitcoinjs-lib": "^6.1.6"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3"
+  }
+}
